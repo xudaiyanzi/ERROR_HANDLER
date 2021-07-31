@@ -3,8 +3,11 @@ import json
 from flaskr import create_app
 from models import set_db
 
-class ResourceTestCase(unittest.TestCase):
-    def setUp(self):
+class ResourceTestCase(unittest.TestCase): # define a class for testing, use intuitive naming
+    """"This class represents the __ test case"""
+    
+    def setUp(self): #setUp run before each test
+        """Executed before each test. Define test variables and initialize app."""
         self.app = create_app('testing')
         self.client = self.app.test_client()
         self.database_name = 'test_db'
@@ -12,13 +15,13 @@ class ResourceTestCase(unittest.TestCase):
 
         set_db(self.app, self.database_path)
 
-    def tearDown(self):
+    def tearDown(self): # teardow each test
         """Executed after each test"""
         pass
 
-    def test_given_behavior(self):
+    def test_given_behavior(self): # test client request and evaluate response
         """Test ______________"""
-        res = self.client().get('/')
+        res = self.client().get('/') # save the response
 
         self.assertEqual(res.status_code, 200)
 
