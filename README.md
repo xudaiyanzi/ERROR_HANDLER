@@ -82,20 +82,18 @@ If there is not error, the response has a code 200, and the response json:
   ```
 When there is a error, the error code will be generated.This project documents 4XX errors, including 400, 404, 405, 422
  - "400" : Bad request 
-      - The server can not understand the syntax. It may due to the syntax error, bad route
-    
-  e.g.
+      - The server can not understand the syntax. It may due to the syntax error, bad route. For example, using the command line
     ` 
     curl -X PATCH http://127.0.0.1:5000/books/1 -H "Content-Type: application/json" -d '{"rating"}'
     `
-  This syntax did not add the value for the "rating". The response:
-    ```
-    {
-    "error": 400, 
-    "message": "bad request", 
-    "success": false
-    }
-    ```
+  trigger a 404 error because it does not add the value for the "rating". The response:
+      ```
+      {
+      "error": 400, 
+      "message": "bad request", 
+      "success": false
+      }
+      ```
 
  - "404" : Not found
       The server undstand the request, but it can not found the resoure (item) to be processed
