@@ -98,22 +98,54 @@ def create_app(test_config=None):
     new_author = body.get('author', None)
     new_rating = body.get('rating', None)
 
+    ## hand the "search" here
+    search = body.get('search', None)
+
     try:
-      book = Book(title=new_title, author=new_author, rating=new_rating)
-      book.insert()
+      if search:
+        selection = Book.query.filter(Book.title.ilike('%{}%'.format(search))).order_by(Book.id)
+        current_books = paginate_books(request, selection)
 
-      selection = Book.query.order_by(Book.id).all()
-      current_books = paginate_books(request, selection)
+        return jsonify({
+        'success':True,
+        'books':current_books,
+        'total_books':len(selection.all())
+        })
+      
+      else:
+        book = Book(title=new_title, author=new_author, rating=new_rating)
+        book.insert()
 
-      return jsonify({
-        'success': True,
-        'created': book.id,
-        'books': current_books,
-        'total_books': len(Book.query.all())
-      })
+        selection = Book.query.order_by(Book.id).all()
+        current_books = paginate_books(request, selection)
+
+        return jsonify({
+          'success': True,
+          'created': book.id,
+          'books': current_books,
+          'total_books': len(Book.query.all())
+        })
 
     except:
       abort(422)
+
+  # @TODO: Create a new endpoint or update a previous endpoint to handle searching for a team in the title
+  #        the body argument is called 'search' coming from the frontend. 
+  #        If you use a different argument, make sure to update it in the frontend code. 
+  #        The endpoint will need to return success value, a list of books for the search and the number of books with the search term
+  #        Response body keys: 'success', 'books' and 'total_books'
+  # @app.route("/books/search/<int:book_id>", methods=['GET'])
+  # def search_book(book_id):
+  #   try:
+  #     book = Book.query.filter(Book.id == book_id).one_or_none()
+
+  #     return jsonify({
+  #       'success':True,
+  #       'book':book.format()
+  #     })
+
+  #   except:
+  #     abort(404)
 
 
   # @TODO: Review the above code for route handlers. 
