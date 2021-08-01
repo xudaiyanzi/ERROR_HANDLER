@@ -8,15 +8,73 @@ The API in this project is a REST API. It will return a JSON-encoded response af
 
 # Get started
 
-## 1. base url
+## 1. Base url
 The Basic URL is 'http://127.0.0.1:5000/books'. As we are using our own computer as the server, it starts with "http://127.0.0.1:5000/". The command line below can display a general data structure:
 
-    $curl http://127.0.0.1:5000/books
+    curl http://127.0.0.1:5000/books
+
+the response would be like:
+
+{
+  "books": [
+    {
+      "author": "Stephen King", 
+      "id": 1, 
+      "rating": 5, 
+      "title": "The Outsider: A Novel"
+    }, 
+    {
+      "author": "Lisa Halliday", 
+      "id": 2, 
+      "rating": 4, 
+      "title": "Asymmetry: A Novel"
+    }, 
+    {
+      "author": "Kristin Hannah", 
+      "id": 3, 
+      "rating": 4, 
+      "title": "The Great Alone"
+    }, 
+    {
+      "author": "Tara Westover", 
+      "id": 4, 
+      "rating": 5, 
+      "title": "Educated: A Memoir"
+    }, 
+    {
+      "author": "Jojo Moyes", 
+      "id": 5, 
+      "rating": 5, 
+      "title": "Still Me: A Novel"
+    }, 
+    {
+      "author": "Leila Slimani", 
+      "id": 6, 
+      "rating": 2, 
+      "title": "Lullaby"
+    }, 
+    {
+      "author": "Amitava Kumar", 
+      "id": 7, 
+      "rating": 5, 
+      "title": "Immigrant, Montana"
+    }, 
+    {
+      "author": "Madeline Miller", 
+      "id": 8, 
+      "rating": 5, 
+      "title": "CIRCE"
+    }
+  ], 
+  "success": true, 
+  "total_books": 16
+}
+
 
 2. The books are organized into two pages, and they can be query, use the command line:
-    "$curl http://127.0.0.1:5000/books?page=1"
-    and 
-    "$curl http://127.0.0.1:5000/books?page=2"
+
+    curl http://127.0.0.1:5000/books?page=1
+    curl http://127.0.0.1:5000/books?page=2
 
 3. 
 
