@@ -9,13 +9,13 @@ The API in this project is a REST API. It will return a JSON-encoded response af
 # Get started
 
 ## 1. Base url
-The Basic URL is 'http://127.0.0.1:5000/books'. As we are using our own computer as the server, it starts with "http://127.0.0.1:5000/". The command line below can display a general data structure:
+The Basic URL is `http://127.0.0.1:5000/books`. As we are using our own computer as the server, it starts with `http://127.0.0.1:5000/`. The command line below can display a general data structure:
 
     curl http://127.0.0.1:5000/books
 
 the response would be like:
 
-'''
+```
 {
   "books": [
     {
@@ -70,7 +70,7 @@ the response would be like:
   "success": true, 
   "total_books": 16
 }
-'''
+```
 
 2. The books are organized into two pages, and they can be query, use the command line:
 
