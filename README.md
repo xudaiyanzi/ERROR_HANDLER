@@ -74,10 +74,12 @@ the response would be like:
 
 # Error
 
-If there is not error, the response has a code 200, and the response json is 
-  `{
+If there is not error, the response has a code 200, and the response json:
+  ```
+  {
     "success": true
-  }`
+  }
+  ```
 When there is a error, the error code will be generated.This project documents 4XX errors, including 400, 404, 405, 422
  - "400" : Bad request 
       - The server can not understand the syntax. It may due to the syntax error, bad route
@@ -86,7 +88,7 @@ When there is a error, the error code will be generated.This project documents 4
     ` 
     curl -X PATCH http://127.0.0.1:5000/books/1 -H "Content-Type: application/json" -d '{"rating"}'
     `
-  This syntax did not add the value for the "rating". The response is
+  This syntax did not add the value for the "rating". The response:
     ```
     {
     "error": 400, 
