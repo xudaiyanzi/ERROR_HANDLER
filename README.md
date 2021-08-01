@@ -94,12 +94,18 @@ When there is a error, the error code will be generated.This project documents 4
       ```
 
  - "404" : Not found
-      - The server undstand the request, but it can not found the resoure (item) to be processed
-
-    ` curl http://127.0.0.1:5000/books/50 `
+      - The server undstand the request, but it can not found the resoure (item) to be processed 
+      ` curl http://127.0.0.1:5000/books/50 `
 
  - "405" : Method is not allowed
-     The request
+     The request uses a wrong method. For example, `curl http://127.0.0.1:5000/books/50` is wrong as the handler '/books/<int:id>' only use PATCH. POST, DELETE. It does not offer GET method. The response is 
+     ```
+     {
+      "error": 405, 
+      "message": "method is not allowed", 
+      "success": false
+    }
+    ```
 
  - "422" : Can not process the resource
     - The server understand the request, but it can not process the resource. It may be due to the resource does not exist
