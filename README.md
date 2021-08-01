@@ -8,7 +8,7 @@ The API in this project is a REST API. It will return a JSON-encoded response af
 
 # Get started
 
-## 1. Base url
+## Base url
 The Basic URL is `http://127.0.0.1:5000/books`. As we are using our own computer as the server, it starts with `http://127.0.0.1:5000/`. The command line below can display a general data structure:
 
     curl http://127.0.0.1:5000/books
@@ -72,13 +72,41 @@ the response would be like:
 }
 ```
 
-## 2. Query all the data
-The books are organized into two pages, and they can be query, use the command line:
+# Error
+
+If there is not error, the response has a code 200, and the response json is 
+  `{
+    "success": true
+  }`
+When there is a error, the error code will be generated.This project documents 4XX errors, including 400, 404, 405, 422
+ - "400" : Bad request 
+      The server can not understand the syntax. It may due to the syntax error, bad route
+    
+  e.g.
+  ` 
+  curl -X PATCH http://127.0.0.1:5000/books/1 -H "Content-Type: application/json" -d '{"rating"}'
+  `
+  This syntax did not add the value for the "rating". The response is
+  `{
+  "error": 400, 
+  "message": "bad request", 
+  "success": false
+  }`
+
+ - "404" : Not found
+      The server undstand the request, but it can not found the resoure (item) to be processed
+
+ - "405" : Method is not allowed
+     The request
+ - "422" : Can not process the resource
+
+2. Query all the data
+The books are organized into two pages, and they can be query with the following two commands:
 
     `curl http://127.0.0.1:5000/books?page=1`
     `curl http://127.0.0.1:5000/books?page=2`
 
-3. 
+## 3. 
 
 
 
