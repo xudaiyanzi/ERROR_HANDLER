@@ -7,19 +7,21 @@ We use the "BookShelf" project as an example to practice writing the API. It inc
 The API in this project is a REST API. It will return a JSON-encoded response after receive the request in a URL. 
 
 # Get started
-1. The Basic URL is 'http://127.0.0.1:5000/books'. As we are using our own computer as the server, it starts with "http://127.0.0.1:5000/". 
 
--- the command line below can display a general data structure:
+## 1. base url
+The Basic URL is 'http://127.0.0.1:5000/books'. As we are using our own computer as the server, it starts with "http://127.0.0.1:5000/". 
 
-"$curl http://127.0.0.1:5000/books"
+    -- the command line below can display a general data structure:
+
+    "$curl http://127.0.0.1:5000/books"
 
 
-2. to get all the books in database, use the command line:
-"$curl http://127.0.0.1:5000/books?page=1"
- and 
-"$curl http://127.0.0.1:5000/books?page=2"
+2. The books are organized into two pages, and they can be query, use the command line:
+    "$curl http://127.0.0.1:5000/books?page=1"
+    and 
+    "$curl http://127.0.0.1:5000/books?page=2"
 
-In this project
+3. 
 
 
 
