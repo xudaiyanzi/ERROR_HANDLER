@@ -1,55 +1,53 @@
-# Errors Lab
+Bookshelf Display
 
-Now that we have our endpoints, we need to make sure we send back formatted responses when we hit an error. **Pre-requisites and dependencies** are same as the ones explained in the [first exercise's starter code](https://github.com/udacity/nd0044-c2-API-Development-and-Documentation-exercises/blob/master/1_Requests_Starter/README.md)
+# Introduction
 
-## ToDo
-In `__init__.py` use the `errorhandler` decorator to handle all of the errors used in the endpoints. *Before* you get started make sure you read over the endpoint code and inline comments. 
+We use the "BookShelf" project as an example to practice writing the API. It includes the basic requests, GET/POST/PATCH/DELETE. Also, it has the error handlers for 400, 404, 405, 422. The backend files contains the 'test_flaskr.py', which can be used to test each API and lists the errors if it fails.
 
-We have provided code to give you a starting point which you need to review in order to understand the code and errors you'll be working with. 
+The API in this project is a REST API. It will return a JSON-encoded response after receive the request in a URL. 
 
-During this exercise, you'll also notice instructions to use `curl` to write requests. Take this opportunity to do so, such that you have practice before you need to use it in a professional setting! 
+# Get started
+1. The Basic URL is 'http://127.0.0.1:5000/books'. As we are using our own computer as the server, it starts with "http://127.0.0.1:5000/". 
 
-## How to run the application
-### Step 0: Start/Stop the PostgreSQL server
-```bash
-# Start/stop
-pg_ctl -D /usr/local/var/postgres start
-pg_ctl -D /usr/local/var/postgres stop 
-```
-If it shows that the *port already occupied* error, run:
-```bash
-sudo su - 
-ps -ef | grep postmaster | awk '{print $2}'
-kill <PID> 
-```
+-- the command line below can display a general data structure:
 
-### Step 1 - Create and Populate the database
-You will have your database already in place. In case you played around with table and data, you can anytime drop and recreate the database. Refer to the [first exercise's starter code](https://github.com/udacity/nd0044-c2-API-Development-and-Documentation-exercises/blob/master/1_Requests_Starter/README.md) again.
+"$curl http://127.0.0.1:5000/books"
 
-### Step 2 - Start the frontend server
-From the `frontend` folder, run the following commands to start the client: 
-```
-npm install // only once to install dependencies
-npm start 
-```
-By default, the frontend will run on `localhost:3000`. Close the terminal if you wish to stop the frontend server. 
 
-### Step 3 - Complete the ToDos
-Open the */backend/flaskr/__init__.py* file, and finish all the @TODOs. 
+2. to get all the books in database, use the command line:
+"$curl http://127.0.0.1:5000/books?page=1"
+ and 
+"$curl http://127.0.0.1:5000/books?page=2"
 
-There is no change in the frontend this time. 
+In this project
 
-### Step 4 - Start the backend server
-In a new terminal, start your (backend) Flask server by running the command below:
-```bash
-cd backend
-export FLASK_APP=flaskr
-export FLASK_ENV=development
-flask run
-```
 
-### Step 5 - Access the app
-Now, run the app and test both the services:
-1. Backend (flask): http://127.0.0.1:5000/ (use CURL within the workspace)
 
-2. Frontend: You can acces `http://localhost:3000` for the frontend. 
+
+
+
+# API Documentation Practice
+In this exercise, your task is to practice writing documentation for the bookstore app we created earlier.
+
+You'll soon be writing documentation for your final project (the Trivia API), after which you'll get feedback from a reviewer. You can think of this as some rudimentary practice to prepare for that.
+
+At each step, you can compare what you've written with our own version. Of course, **there isn't a single correct way to write a piece of documentation**, so your version may look quite different. However, there are principles and practices you should follow in order to produce quality documentation, and we'll point this out so you can check whether you've incorporated them in what you wrote.
+
+## Getting started
+Now, add a Getting Started section to your documentation. Remember, this should include at least your base URL and an explanation of authentication. Feel free to provide other information that is relevant for your API
+
+
+## Error Handling
+Now, add an Error Handling section to your documentation. It should include the format of the error responses the client can expect as well as which status codes you use.
+- Response codes
+- Messages
+- Error types
+
+## Endpoint Library
+Now, add an Endpoint Library section to your documentation. Make sure that endpoints, methods and returned data are all clear. Consider including sample requests for clarity
+
+- Organized by resource
+- Include each endpoint
+- Sample request 
+- Arguments including data types
+- Response object including status codes and data types 
