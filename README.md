@@ -108,7 +108,7 @@ When there is a error, the error code will be generated.This project documents 4
     ```
 
  - "422" : Can not process the resource
-    - The server understand the request, but it can not process the resource. It may be due to the resource does not exist
+    - The server understand the request, but it can not process the resource. It may be due to the resource (id=50) does not exist
     `curl -X DELETE http://127.0.0.1:5000/books/50`
     and the response is 
     ```
