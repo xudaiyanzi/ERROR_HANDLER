@@ -83,9 +83,7 @@ If there is not error, the response has a code 200, and the response json:
 When there is a error, the error code will be generated.This project documents 4XX errors, including 400, 404, 405, 422
  - "400" : Bad request 
       - The server can not understand the syntax. It may due to the syntax error, bad route. For example, using the command line
-    ` 
-    curl -X PATCH http://127.0.0.1:5000/books/1 -H "Content-Type: application/json" -d '{"rating"}'
-    `
+    ` curl -X PATCH http://127.0.0.1:5000/books/1 -H "Content-Type: application/json" -d '{"rating"}'`
   trigger a 404 error because it does not add the value for the "rating". The response:
       ```
       {
@@ -96,17 +94,30 @@ When there is a error, the error code will be generated.This project documents 4
       ```
 
  - "404" : Not found
-      The server undstand the request, but it can not found the resoure (item) to be processed
+      - The server undstand the request, but it can not found the resoure (item) to be processed
+
+    ` curl http://127.0.0.1:5000/books/50 `
 
  - "405" : Method is not allowed
      The request
+
  - "422" : Can not process the resource
+    - The server understand the request, but it can not process the resource. It may be due to the resource does not exist
+    `curl -X DELETE http://127.0.0.1:5000/books/50`
+    and the response is 
+    ```
+    {
+      "error": 422, 
+      "message": "can not process the resource", 
+      "success": false
+    }
+    ```
 
 2. Query all the data
 The books are organized into two pages, and they can be query with the following two commands:
 
-    `curl http://127.0.0.1:5000/books?page=1`
-    `curl http://127.0.0.1:5000/books?page=2`
+  `curl http://127.0.0.1:5000/books?page=1`
+  `curl http://127.0.0.1:5000/books?page=2`
 
 ## 3. 
 
