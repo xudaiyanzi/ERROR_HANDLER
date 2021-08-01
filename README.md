@@ -72,10 +72,11 @@ the response would be like:
 }
 ```
 
-2. The books are organized into two pages, and they can be query, use the command line:
+## 2. Query all the data
+The books are organized into two pages, and they can be query, use the command line:
 
-    curl http://127.0.0.1:5000/books?page=1
-    curl http://127.0.0.1:5000/books?page=2
+    `curl http://127.0.0.1:5000/books?page=1`
+    `curl http://127.0.0.1:5000/books?page=2`
 
 3. 
 
