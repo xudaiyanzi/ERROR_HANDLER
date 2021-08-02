@@ -34,10 +34,10 @@ We need to install the backend and frontend before using the bookshelf.
          `psql -f books.psql -U student -d bookshelf`
 
   #### ==>  ==> 1.1.3 Run the flask
-  If we want to launch the bookshelf, we `cd` to the `backend` directory and use 
-      `export FLASK_APP=flaskr`
-      `export FLASK_EVN=development`
-      `flask run`
+  If we want to launch the bookshelf, we `cd` to the `backend` directory and use: 
+        `export FLASK_APP=flaskr`
+        `export FLASK_EVN=development`
+        `flask run`
 
   we can either go to the `http://127.0.0.1:5000/ANY_API_ENDPOINT` or use the `curl` to see the API responses.
 
