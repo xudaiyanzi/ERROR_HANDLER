@@ -2,7 +2,32 @@
 This project uses a virtual bookshelf to create, update, delete, and query books in BOOK database. From the practical purposes, the databases has a few books in place. With the provided API, one can manipulate the bookshelf as needed.
 
 ## 1. Getting started
+We need to install the backend and frontend before using the bookshelf. 
+### 1.1 Backend installation
+There are three parts of the backend need to be take care of.
+#### 1.1.1 Install the requirements.txt
+We need first `cd` to the `backend` directory and use the command line `pip3 install -r requirements.txt` to install all the prerequisities
+#### 1.1.2 Install the database and create tables
+We use the psql to manipulate the database, and we first create the database and then create tables in the database:
+##### 1.1.2.1 Install the database
+Mac users first start the postgres server. Use the command line: 
+  `which postgres`
+  `postgres --version`
+to check the version of postgres and then use
+  `pg_ctl -D /usr/local/var/postgres start`
+and 
+  `pg_ctl -D /usr/local/var/postgres stop`
+to start and end the post gregre server
 
+Following the step above, we open the postgres using 
+  `psql postgres` 
+and install the basebase using 
+  `\i setup.sql`
+We need to `\q` to exit the psql before install the tables.
+##### 1.1.2.2 Install the tables
+
+
+#### 1.1.3 Run the flask
 
 ## 2. API Reference
 
