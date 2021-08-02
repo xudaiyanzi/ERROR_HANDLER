@@ -128,6 +128,7 @@ When there is a error, the error code will be generated.This project documents 4
 # Resource endpoint library
 
 ## 1. GET books
+### 1.1 GET books by page
   The books are organized into two pages, and each page has 8 books. one page can be query with the following command:
 
     `curl http://127.0.0.1:5000/books?page=1`
@@ -188,6 +189,9 @@ When there is a error, the error code will be generated.This project documents 4
   "total_books": 16
   }
 ```
+### 2. GET the book by title
+If one needs to search a book. The following command can be used:
+`TO BE ADDED `
 
 ## 2. PATCH books
 When it is needed to update the bookshelf, we use the patch method. The request should include the id of the resource and the attribute to be updated. For example,
@@ -201,7 +205,83 @@ The response is
 }
 ```
 
-## 3. POST 
+## 3. POST method
+This method is used to added an entry (a book). We use 
+`curl -X POST http://127.0.0.1:5000/books -H "Content-Type: application/json" -d '{"title":"Neverwhere", "author":"Neil Gaiman", "rating":"5"}'`
+
+The response is 
+```
+{
+  "books": [
+    {
+      "author": "Stephen King", 
+      "id": 1, 
+      "rating": 5, 
+      "title": "The Outsider: A Novel"
+    }, 
+    {
+      "author": "Lisa Halliday", 
+      "id": 2, 
+      "rating": 4, 
+      "title": "Asymmetry: A Novel"
+    }, 
+    {
+      "author": "Kristin Hannah", 
+      "id": 3, 
+      "rating": 4, 
+      "title": "The Great Alone"
+    }, 
+    {
+      "author": "Tara Westover", 
+      "id": 4, 
+      "rating": 5, 
+      "title": "Educated: A Memoir"
+    }, 
+    {
+      "author": "Jojo Moyes", 
+      "id": 5, 
+      "rating": 5, 
+      "title": "Still Me: A Novel"
+    }, 
+    {
+      "author": "Leila Slimani", 
+      "id": 6, 
+      "rating": 2, 
+      "title": "Lullaby"
+    }, 
+    {
+      "author": "Amitava Kumar", 
+      "id": 7, 
+      "rating": 5, 
+      "title": "Immigrant, Montana"
+    }, 
+    {
+      "author": "Madeline Miller", 
+      "id": 8, 
+      "rating": 5, 
+      "title": "CIRCE"
+    }
+  ], 
+  "created": 23, 
+  "success": true, 
+  "total_books": 17
+}
+```
+
+## 4. Delete a book
+To delete a book, we use the DELETE method. The command line is
+` curl -X DELETE http://127.0.0.1:5000/books/23?page=3 `
+
+The response is 
+```
+{
+  "books": [], 
+  "deleted": 23, 
+  "success": true, 
+  "total_books": 16
+}
+```
+
 
 
 
