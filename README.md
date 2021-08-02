@@ -1,5 +1,3 @@
-Bookshelf Display
-
 # Introduction
 
 We use the "BookShelf" project as an example to practice writing the API. It includes the basic requests, GET/POST/PATCH/DELETE. Also, it has the error handlers for 400, 404, 405, 422. The backend files contains the 'test_flaskr.py', which can be used to test each API and lists the errors if it fails.
@@ -191,36 +189,19 @@ When there is a error, the error code will be generated.This project documents 4
   }
 ```
 
-## 2. POST books
+## 2. PATCH books
+When it is needed to update the bookshelf, we use the patch method. The request should include the id of the resource and the attribute to be updated. For example,
+` curl -X PATCH http://127.0.0.1:5000/books/1 -H "Content-Type: application/json" -d '{"rating":5}' `
+
+The response is 
+```
+{
+  "id": 1, 
+  "success": true
+}
+```
+
+## 3. POST 
 
 
 
-
-
-
-
-# API Documentation Practice
-In this exercise, your task is to practice writing documentation for the bookstore app we created earlier.
-
-You'll soon be writing documentation for your final project (the Trivia API), after which you'll get feedback from a reviewer. You can think of this as some rudimentary practice to prepare for that.
-
-At each step, you can compare what you've written with our own version. Of course, **there isn't a single correct way to write a piece of documentation**, so your version may look quite different. However, there are principles and practices you should follow in order to produce quality documentation, and we'll point this out so you can check whether you've incorporated them in what you wrote.
-
-## Getting started
-Now, add a Getting Started section to your documentation. Remember, this should include at least your base URL and an explanation of authentication. Feel free to provide other information that is relevant for your API
-
-
-## Error Handling
-Now, add an Error Handling section to your documentation. It should include the format of the error responses the client can expect as well as which status codes you use.
-- Response codes
-- Messages
-- Error types
-
-## Endpoint Library
-Now, add an Endpoint Library section to your documentation. Make sure that endpoints, methods and returned data are all clear. Consider including sample requests for clarity
-
-- Organized by resource
-- Include each endpoint
-- Sample request 
-- Arguments including data types
-- Response object including status codes and data types 

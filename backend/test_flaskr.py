@@ -82,6 +82,7 @@ class BookTestCase(unittest.TestCase):
 
     #     self.assertEqual(res.status_code, 200)
     #     self.assertEqual(data['success'], True)
+    #     self.assertEqual(data['id'], 3)
     #     self.assertEqual(book.format()['rating'], 1)
 
 
