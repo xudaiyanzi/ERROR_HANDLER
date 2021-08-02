@@ -94,8 +94,16 @@ When there is a error, the error code will be generated.This project documents 4
       ```
 
  - "404" : Not found
-      - The server undstand the request, but it can not found the resoure (item) to be processed 
-      ` curl http://127.0.0.1:5000/books/50 `
+      - The server undstand the request, but it can not found the resoure (the page) to be found
+      ` curl http://127.0.0.1:5000/books?page=3 `
+      the response is 
+      ```
+      {
+      "error": 404, 
+      "message": "not found", 
+      "sucess": false
+      }
+      ```
 
  - "405" : Method is not allowed
      The request uses a wrong method. For example, `curl http://127.0.0.1:5000/books/50` is wrong as the handler '/books/<int:id>' only use PATCH. POST, DELETE. It does not offer GET method. The response is 
