@@ -14,30 +14,35 @@ We need to install the backend and frontend before using the bookshelf.
   We use the psql to manipulate the database, and we first create the database and then create tables in the database:
 
   #### ==>  ==> 1.1.2.1 Install the database
-  Mac users first start the postgres server. Use the command line: 
-        `which postgres`
-        `postgres --version`
+  Mac users first start the postgres server. Use the command line
+    which postgres
+    postgres --version
+
   to check the version of postgres and then use
-        `pg_ctl -D /usr/local/var/postgres start`
+
+    pg_ctl -D /usr/local/var/postgres start
+
   and 
-        `pg_ctl -D /usr/local/var/postgres stop`
+  
+    pg_ctl -D /usr/local/var/postgres stop
+
   to start and end the post gregre server
 
   Following the step above, we open the postgres using 
-        `psql postgres` 
+    psql postgres
   and install the basebase using 
-        `\i setup.sql`
+    \i setup.sql
   We need to `\q` to exit the psql before install the tables.
 
   #### ==>  ==> 1.1.2.2 Install the tables
   In order to create the tables, we (MAC user) use
-         `psql -f books.psql -U student -d bookshelf`
+    psql -f books.psql -U student -d bookshelf
 
   #### ==>  ==> 1.1.3 Run the flask
   If we want to launch the bookshelf, we `cd` to the `backend` directory and use: 
-        `export FLASK_APP=flaskr`
-        `export FLASK_EVN=development`
-        `flask run`
+        export FLASK_APP=flaskr
+        export FLASK_EVN=development
+        flask run
 
   we can either go to the `http://127.0.0.1:5000/ANY_API_ENDPOINT` or use the `curl` to see the API responses.
 
