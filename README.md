@@ -1,5 +1,8 @@
 # Bookshelf
-This project practice API
+This project uses a virtual bookshelf to create, update, delete, and query books in BOOK database. From the practical purposes, the databases has a few books in place. With the provided API, one can manipulate the bookshelf as needed.
+
+## Getting started
+
 
 ## API Reference
 
