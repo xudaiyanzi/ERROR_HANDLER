@@ -23,19 +23,23 @@ We need to install the backend and frontend before using the bookshelf.
     pg_ctl -D /usr/local/var/postgres start
 
   and 
-  
+
     pg_ctl -D /usr/local/var/postgres stop
 
   to start and end the post gregre server
 
   Following the step above, we open the postgres using 
+
     psql postgres
+
   and install the basebase using 
+
     \i setup.sql
+    
   We need to `\q` to exit the psql before install the tables.
 
   #### ==>  ==> 1.1.2.2 Install the tables
-  In order to create the tables, we (MAC user) use
+  In order to create the tables, we (MAC user) use:
     psql -f books.psql -U student -d bookshelf
 
   #### ==>  ==> 1.1.3 Run the flask
