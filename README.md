@@ -385,10 +385,11 @@ The response is
 The attribute books shows the book on that particular page.
 
 ## 3. Deployment
-
+N/A
 ## 4. Authors
-
+Yan Xu, Coach Caryn
 ## 5. Acknowledgement
+The author thanks the full-stack course team in Udacity
 
 
 
