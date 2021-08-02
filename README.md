@@ -127,13 +127,72 @@ When there is a error, the error code will be generated.This project documents 4
     }
     ```
 
-2. Query all the data
-The books are organized into two pages, and they can be query with the following two commands:
+# Resource endpoint library
 
-  `curl http://127.0.0.1:5000/books?page=1`
-  `curl http://127.0.0.1:5000/books?page=2`
+## 1. GET books
+  The books are organized into two pages, and each page has 8 books. one page can be query with the following command:
 
-## 3. 
+    `curl http://127.0.0.1:5000/books?page=1`
+
+  The response is in json file:
+  ```
+  {
+  "books": [
+    {
+      "author": "Stephen King", 
+      "id": 1, 
+      "rating": 5, 
+      "title": "The Outsider: A Novel"
+    }, 
+    {
+      "author": "Lisa Halliday", 
+      "id": 2, 
+      "rating": 4, 
+      "title": "Asymmetry: A Novel"
+    }, 
+    {
+      "author": "Kristin Hannah", 
+      "id": 3, 
+      "rating": 4, 
+      "title": "The Great Alone"
+    }, 
+    {
+      "author": "Tara Westover", 
+      "id": 4, 
+      "rating": 5, 
+      "title": "Educated: A Memoir"
+    }, 
+    {
+      "author": "Jojo Moyes", 
+      "id": 5, 
+      "rating": 5, 
+      "title": "Still Me: A Novel"
+    }, 
+    {
+      "author": "Leila Slimani", 
+      "id": 6, 
+      "rating": 2, 
+      "title": "Lullaby"
+    }, 
+    {
+      "author": "Amitava Kumar", 
+      "id": 7, 
+      "rating": 5, 
+      "title": "Immigrant, Montana"
+    }, 
+    {
+      "author": "Madeline Miller", 
+      "id": 8, 
+      "rating": 5, 
+      "title": "CIRCE"
+    }], 
+  "success": true, 
+  "total_books": 16
+  }
+```
+
+## 2. POST books
+
 
 
 
