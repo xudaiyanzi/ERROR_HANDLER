@@ -41,11 +41,12 @@ We need to install the backend and frontend before using the bookshelf.
 
   #### ==>  ==> 1.1.2.2 Install the tables
   In order to create the tables, we (MAC user) use:
+
     psql -f books.psql -U student -d bookshelf
 
   #### ==>  ==> 1.1.3 Run the flask
   If we want to launch the bookshelf, we `cd` to the `backend` directory and use: 
-  
+
         export FLASK_APP=flaskr
         export FLASK_EVN=development
         flask run
@@ -53,8 +54,11 @@ We need to install the backend and frontend before using the bookshelf.
   we can either go to the `http://127.0.0.1:5000/ANY_API_ENDPOINT` or use the `curl` to see the API responses.
 
 ### 1.2 Frontend installation
-  There are three parts of the backend need to be take care of.
-
+  The frontend helps to present the book info in a more appealing way. To start the frondend, we first `cd` to the frontend file, and then
+        npm install 
+        npm start
+  One it is installed, we need not to install in following runing mode.
+  
 ## 2. API Reference
 
 We use the "BookShelf" project as an example to practice writing the API. It includes the basic requests, GET/POST/PATCH/DELETE. Also, it has the error handlers for 400, 404, 405, 422. The backend files contains the 'test_flaskr.py', which can be used to test each API and lists the errors if it fails.
