@@ -189,7 +189,7 @@ When there is a error, the error code will be generated.This project documents 4
   "total_books": 16
   }
 ```
-### 2. GET the book by title
+### 1.2. GET the book by title
 If one needs to search a book. The following command can be used:
 `TO BE ADDED `
 
@@ -281,6 +281,8 @@ The response is
   "total_books": 16
 }
 ```
+
+The attribute books shows the book on that particular page.
 
 
 
