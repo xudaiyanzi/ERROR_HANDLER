@@ -31,7 +31,7 @@ We need to install the backend and frontend before using the bookshelf.
 
   Following the step above, we open the postgres using 
 
-      psql postgres
+      psql
 
   and install the basebase using 
 
