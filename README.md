@@ -1,18 +1,16 @@
 # Bookshelf
 This project uses a virtual bookshelf to create, update, delete, and query books in BOOK database. From the practical purposes, the databases has a few books in place. With the provided API, one can manipulate the bookshelf as needed.
 
-## Getting started
+## 1. Getting started
 
 
-## API Reference
-
-### Introduction
+## 2. API Reference
 
 We use the "BookShelf" project as an example to practice writing the API. It includes the basic requests, GET/POST/PATCH/DELETE. Also, it has the error handlers for 400, 404, 405, 422. The backend files contains the 'test_flaskr.py', which can be used to test each API and lists the errors if it fails.
 
 The API in this project is a REST API. It will return a JSON-encoded response after receive the request in a URL. 
 
-### Get started
+### 2.1 Getting started
 
 #### Base url
 The Basic URL is `http://127.0.0.1:5000/books`. As we are using our own computer as the server, it starts with `http://127.0.0.1:5000/`. The command line below can display a general data structure:
@@ -78,7 +76,7 @@ the response would be like:
 }
 ```
 
-### Error
+### 2.3 Error handler
 
 If there is not error, the response has a code 200, and the response json:
   ```
@@ -133,9 +131,9 @@ When there is a error, the error code will be generated.This project documents 4
     }
     ```
 
-### Resource endpoint library
+### 2.4 Resource endpoint library
 
-#### 1. GET books
+#### 2.4.1 GET books
 ##### GET books by page
   The books are organized into two pages, and each page has 8 books. one page can be query with the following command:
 
@@ -198,7 +196,7 @@ When there is a error, the error code will be generated.This project documents 4
   }
 ```
 
-#### 2. PATCH books
+#### 2.4.2 PATCH books
 When it is needed to update the bookshelf, we use the patch method. The request should include the id of the resource and the attribute to be updated. For example,
 ` curl -X PATCH http://127.0.0.1:5000/books/1 -H "Content-Type: application/json" -d '{"rating":5}' `
 
@@ -210,9 +208,9 @@ The response is
 }
 ```
 
-#### 3. POST method
+#### 2.4.3 POST method
 
-##### 3.1 Add a new entry
+##### 2.4.3.1 Add a new entry
 This method is used to added an entry (a book). We use 
 `curl -X POST http://127.0.0.1:5000/books -H "Content-Type: application/json" -d '{"title":"Neverwhere", "author":"Neil Gaiman", "rating":"5"}'`
 
@@ -275,7 +273,7 @@ The response is
 }
 ```
 
-##### 3.2. search the book by title
+##### 2.4.3.2 search the book by title
 If one needs to search a book. The following command can be used:
 ` curl -X POST http://127.0.0.1:5000/books -H "Content-Type: application/json" -d '{"search":"the"}'`
 
@@ -313,7 +311,7 @@ The response is
 }
 ```
 
-#### 4. Delete a book
+#### 2.4 Delete a book
 To delete a book, we use the DELETE method. The command line is
 ` curl -X DELETE http://127.0.0.1:5000/books/23?page=3 `
 
@@ -328,6 +326,12 @@ The response is
 ```
 
 The attribute books shows the book on that particular page.
+
+## 3. Deployment
+
+## 4. Authors
+
+## 5. Acknowledgement
 
 
 
