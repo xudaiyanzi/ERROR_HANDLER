@@ -128,7 +128,7 @@ When there is a error, the error code will be generated.This project documents 4
 # Resource endpoint library
 
 ## 1. GET books
-### 1.1 GET books by page
+### GET books by page
   The books are organized into two pages, and each page has 8 books. one page can be query with the following command:
 
     `curl http://127.0.0.1:5000/books?page=1`
@@ -189,9 +189,6 @@ When there is a error, the error code will be generated.This project documents 4
   "total_books": 16
   }
 ```
-### 1.2. GET the book by title
-If one needs to search a book. The following command can be used:
-`TO BE ADDED `
 
 ## 2. PATCH books
 When it is needed to update the bookshelf, we use the patch method. The request should include the id of the resource and the attribute to be updated. For example,
@@ -206,6 +203,8 @@ The response is
 ```
 
 ## 3. POST method
+
+### 3.1 Add a new entry
 This method is used to added an entry (a book). We use 
 `curl -X POST http://127.0.0.1:5000/books -H "Content-Type: application/json" -d '{"title":"Neverwhere", "author":"Neil Gaiman", "rating":"5"}'`
 
@@ -265,6 +264,44 @@ The response is
   "created": 23, 
   "success": true, 
   "total_books": 17
+}
+```
+
+### 3.2. search the book by title
+If one needs to search a book. The following command can be used:
+` curl -X POST http://127.0.0.1:5000/books -H "Content-Type: application/json" -d '{"search":"the"}'`
+
+The response is 
+```
+{
+  "books": [
+    {
+      "author": "Stephen King", 
+      "id": 1, 
+      "rating": 5, 
+      "title": "The Outsider: A Novel"
+    }, 
+    {
+      "author": "Kristin Hannah", 
+      "id": 3, 
+      "rating": 4, 
+      "title": "The Great Alone"
+    }, 
+    {
+      "author": "Rachel Kushner", 
+      "id": 15, 
+      "rating": 1, 
+      "title": "The Mars Room"
+    }, 
+    {
+      "author": "Gregory Blake Smith", 
+      "id": 16, 
+      "rating": 2, 
+      "title": "The Maze at Windermere"
+    }
+  ], 
+  "success": true, 
+  "total_books": 4
 }
 ```
 
