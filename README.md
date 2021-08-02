@@ -8,10 +8,10 @@ We need to install the backend and frontend before using the bookshelf.
   There are three parts of the backend need to be take care of.
 
   #### --> --> 1.1.1 Install the requirements.txt
-    We need first `cd` to the `backend` directory and use the command line `pip3 install -r requirements.txt` to install all the prerequisities
+  We need first `cd` to the `backend` directory and use the command line `pip3 install -r requirements.txt` to install all the prerequisities
 
   #### --> --> 1.1.2 Install the database and create tables
-    We use the psql to manipulate the database, and we first create the database and then create tables in the database:
+  We use the psql to manipulate the database, and we first create the database and then create tables in the database:
 
   #### **** 1.1.2.1 Install the database
   Mac users first start the postgres server. Use the command line: 
@@ -34,15 +34,15 @@ We need to install the backend and frontend before using the bookshelf.
          `psql -f books.psql -U student -d bookshelf`
 
   #### --> --> 1.1.3 Run the flask
-    If we want to launch the bookshelf, we `cd` to the `backend` directory and use 
+  If we want to launch the bookshelf, we `cd` to the `backend` directory and use 
       `export FLASK_APP=flaskr`
       `export FLASK_EVN=development`
       `flask run`
 
-    we can either go to the `http://127.0.0.1:5000/ANY_API_ENDPOINT` or use the `curl` to see the API responses.
+  we can either go to the `http://127.0.0.1:5000/ANY_API_ENDPOINT` or use the `curl` to see the API responses.
 
 ### 1.2 Frontend installation
-There are three parts of the backend need to be take care of.
+  There are three parts of the backend need to be take care of.
 
 ## 2. API Reference
 
