@@ -43,6 +43,8 @@ We need to install the backend and frontend before using the bookshelf.
   In order to create the tables, we (MAC user) use:
 
     psql -f books.psql -U student -d bookshelf
+  
+    psql -f books.psql -U student -d bookshelf_test
 
   #### ==>  ==> 1.1.3 Run the flask
   If we want to launch the bookshelf, we `cd` to the `backend` directory and use: 
